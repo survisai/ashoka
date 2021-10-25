@@ -99,13 +99,13 @@ class _HomePageState extends State<HomePage> {
             setState(() => this._currentIndex = _currentIndex),
         items: <BottomNavyBarItem>[
           BottomNavyBarItem(
-            icon: Icon(Icons.apps),
+            icon: Icon(Icons.home),
             title: Text('Home'),
             activeColor: Colors.red,
             textAlign: TextAlign.center,
           ),
           BottomNavyBarItem(
-            icon: Icon(Icons.message),
+            icon: Icon(Icons.miscellaneous_services),
             title: Text(
               'Messages test for mes teset test test ',
             ),
@@ -113,7 +113,7 @@ class _HomePageState extends State<HomePage> {
             textAlign: TextAlign.center,
           ),
           BottomNavyBarItem(
-            icon: Icon(Icons.settings),
+            icon: Icon(Icons.phone),
             title: Text('Settings'),
             activeColor: Colors.blue,
             textAlign: TextAlign.center,
