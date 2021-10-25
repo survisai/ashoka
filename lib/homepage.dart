@@ -4,6 +4,7 @@ import 'package:ashoka/bottomnavigationscreens.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:ashoka/LoginScreen.dart';
+import 'package:ashoka/drawerhome.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -22,7 +23,7 @@ class _HomePageState extends State<HomePage> {
     size: 30,
   );
   Widget cusSearchBar =
-      Image.asset('assets/ashoka_logo.png', height: 80, width: 100);
+      Image.asset('assets/ashoka_logo.png', height: 50, width: 80);
   bool tappedYes = false;
   User? firebaseUser = FirebaseAuth.instance.currentUser;
   final _auth = FirebaseAuth.instance;
@@ -85,6 +86,8 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
+      drawer: DrawerHome(),
+      backgroundColor: Colors.green[50],
       body: screens[_currentIndex],
       bottomNavigationBar: BottomNavyBar(
         selectedIndex: _currentIndex,
@@ -209,5 +212,16 @@ class AlertDialogss {
       },
     );
     return (action != null) ? action : DialogsAction.cancel;
+  }
+}
+
+//=================================================================================================
+class Screen1 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    throw Scaffold(
+      
+    );
   }
 }
