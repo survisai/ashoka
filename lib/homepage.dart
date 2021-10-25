@@ -5,7 +5,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:ashoka/LoginScreen.dart';
 
-
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -18,75 +17,74 @@ class _HomePageState extends State<HomePage> {
     Screen2(),
     Screen3(),
   ];
-  Icon cusIcon=Icon(Icons.search,size: 30,);
-  Widget cusSearchBar = Image.asset('assets/Tresco_logo.png',height: 80, width: 100);
+  Icon cusIcon = Icon(
+    Icons.search,
+    size: 30,
+  );
+  Widget cusSearchBar =
+      Image.asset('assets/ashoka_logo.png', height: 80, width: 100);
   bool tappedYes = false;
-  User ?firebaseUser = FirebaseAuth.instance.currentUser;
+  User? firebaseUser = FirebaseAuth.instance.currentUser;
   final _auth = FirebaseAuth.instance;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.green[200],
-        title:cusSearchBar,
-
+      appBar: AppBar(
+        backgroundColor: Colors.green[200],
+        title: cusSearchBar,
         actions: [
-
           IconButton(
-              onPressed: (){
-                setState(() {
-                if(this.cusIcon.icon== (Icons.search)){
-                 this.cusIcon=Icon(Icons.cancel,size: 30,);
-                 this.cusSearchBar=TextField(
-            textInputAction:TextInputAction.go,
-            decoration:InputDecoration(
-                border:InputBorder.none,
-                hintText: "Search Here"
-            ),
-            style: TextStyle(
-                color:Colors.white,
-                fontSize:16.0
-            ),
-          );
-        }
-        else{
-          this.cusIcon=Icon(Icons.search);
-          this.cusSearchBar=Text("Tresco");
-        }
-      });
-    },
-                icon: cusIcon,
-    ),
-
+            onPressed: () {
+              setState(() {
+                if (this.cusIcon.icon == (Icons.search)) {
+                  this.cusIcon = Icon(
+                    Icons.cancel,
+                    size: 30,
+                  );
+                  this.cusSearchBar = TextField(
+                    textInputAction: TextInputAction.go,
+                    decoration: InputDecoration(
+                        border: InputBorder.none, hintText: "Search Here"),
+                    style: TextStyle(color: Colors.white, fontSize: 16.0),
+                  );
+                } else {
+                  this.cusIcon = Icon(Icons.search);
+                  this.cusSearchBar = Text("Ashoka");
+                }
+              });
+            },
+            icon: cusIcon,
+          ),
           IconButton(
             onPressed: () async {
-                if(firebaseUser == null) {
-                  final action = await AlertDialogs.yesCancelDialog(
-                      context, 'LOGIN', 'Please Login to View');
-                  if (action == DialogsAction.yes) {
-                    setState(() => tappedYes = true);
-                  }
-                  else {
-                    setState(() => tappedYes = false);
-                  }
+              if (firebaseUser == null) {
+                final action = await AlertDialogs.yesCancelDialog(
+                    context, 'LOGIN', 'Please Login to View');
+                if (action == DialogsAction.yes) {
+                  setState(() => tappedYes = true);
+                } else {
+                  setState(() => tappedYes = false);
                 }
-                else{
-                  final action = await AlertDialogss.yesCancelDialog(
-                      context, 'LOGOUT', 'please presskey to logout');
-                  if (action == DialogsActions.yes) {
-                    setState(() => tappedYes = true);
-                  }
-                  else {
-                    setState(() => tappedYes = false);
-                  }
-
-                };
+              } else {
+                final action = await AlertDialogss.yesCancelDialog(
+                    context, 'LOGOUT', 'please presskey to logout');
+                if (action == DialogsActions.yes) {
+                  setState(() => tappedYes = true);
+                } else {
+                  setState(() => tappedYes = false);
+                }
+              }
+              ;
             },
-            icon: Icon(Icons.account_circle,size: 35,),
+            icon: Icon(
+              Icons.account_circle,
+              size: 35,
+            ),
             color: Colors.white,
           ),
         ],
-),
+      ),
       body: screens[_currentIndex],
       bottomNavigationBar: BottomNavyBar(
         selectedIndex: _currentIndex,
@@ -123,64 +121,64 @@ class _HomePageState extends State<HomePage> {
 }
 
 //=========================================================================
-enum DialogsAction {yes, cancel}
+enum DialogsAction { yes, cancel }
 
 class AlertDialogs {
   static Future<DialogsAction> yesCancelDialog(
-      BuildContext context,
-      String title,
-      String body,
-      ) async {
+    BuildContext context,
+    String title,
+    String body,
+  ) async {
     final action = await showDialog(
       context: context,
       barrierDismissible: false,
       builder: (BuildContext context) {
         return AlertDialog(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular((10.0))),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular((10.0))),
           title: Text(title),
           content: Text(body),
           actions: <Widget>[
-            ElevatedButton(onPressed: () =>
-                Navigator.push(context,MaterialPageRoute(
-                  builder: (context) => LoginScreen(),
-
-
-                ),
-                ),
+            ElevatedButton(
+                onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => LoginScreen(),
+                      ),
+                    ),
                 child: Text('Login',
                     style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.bold)
-                )
-            ),
+                        color: Colors.white, fontWeight: FontWeight.bold))),
             ElevatedButton(
               onPressed: () => Navigator.of(context).pop(DialogsAction.cancel),
               child: Text('Cancel',
                   style: TextStyle(
-                      color: Colors.white, fontWeight: FontWeight.bold)
-              ),
+                      color: Colors.white, fontWeight: FontWeight.bold)),
             ),
           ],
         );
-      },);
+      },
+    );
     return (action != null) ? action : DialogsAction.cancel;
   }
 }
 
 //=========================================================================
-enum DialogsActions {yes, cancel}
+enum DialogsActions { yes, cancel }
 
 class AlertDialogss {
   static Future<DialogsAction> yesCancelDialog(
-      BuildContext context,
-      String title,
-      String body,
-      ) async {
+    BuildContext context,
+    String title,
+    String body,
+  ) async {
     final action = await showDialog(
       context: context,
       barrierDismissible: false,
       builder: (BuildContext context) {
         return AlertDialog(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular((10.0))),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular((10.0))),
           title: Text(title),
           content: Text(body),
           actions: <Widget>[
@@ -191,26 +189,25 @@ class AlertDialogss {
                   Navigator.pop(context);
                   Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => HomePage()),
-
                   );
-                  final snackBar1 = SnackBar(content: Text('You Have Successfully Logged Out.'),);
+                  final snackBar1 = SnackBar(
+                    content: Text('You Have Successfully Logged Out.'),
+                  );
                   ScaffoldMessenger.of(context).showSnackBar(snackBar1);
-        },
+                },
                 child: Text('Logout',
                     style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.bold)
-                )
-            ),
+                        color: Colors.white, fontWeight: FontWeight.bold))),
             ElevatedButton(
               onPressed: () => Navigator.of(context).pop(DialogsAction.cancel),
               child: Text('Cancel',
                   style: TextStyle(
-                      color: Colors.white, fontWeight: FontWeight.bold)
-              ),
+                      color: Colors.white, fontWeight: FontWeight.bold)),
             ),
           ],
         );
-      },);
+      },
+    );
     return (action != null) ? action : DialogsAction.cancel;
   }
 }
