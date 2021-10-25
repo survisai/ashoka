@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "694138408494",
+    "project_id": "supreme-marketing",
+    "storage_bucket": "supreme-marketing.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:694138408494:android:72e9f80702b772caff59bf",
+        "android_client_info": {
+          "package_name": "com.example.ashoka"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "694138408494-7pn6n6tqj8c7mguvs7lismp34aanjp8u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ashoka",
+            "certificate_hash": "a117b6c144ac0e672fe0a963497b1da8e59c9d86"
+          }
+        },
+        {
+          "client_id": "694138408494-2qvtiupdiqaeqhurd4k0jk98rsqd0mkj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5pilvEhj2RN8CqvrMII72lHVl3gNB8uE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "694138408494-2qvtiupdiqaeqhurd4k0jk98rsqd0mkj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
