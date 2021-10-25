@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:ashoka/LoginScreen.dart';
 import 'package:ashoka/drawerhome.dart';
+import 'package:ashoka/caroselslider.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -98,13 +99,13 @@ class _HomePageState extends State<HomePage> {
             setState(() => this._currentIndex = _currentIndex),
         items: <BottomNavyBarItem>[
           BottomNavyBarItem(
-            icon: Icon(Icons.apps),
+            icon: Icon(Icons.home),
             title: Text('Home'),
             activeColor: Colors.red,
             textAlign: TextAlign.center,
           ),
           BottomNavyBarItem(
-            icon: Icon(Icons.message),
+            icon: Icon(Icons.miscellaneous_services),
             title: Text(
               'Messages test for mes teset test test ',
             ),
@@ -112,7 +113,7 @@ class _HomePageState extends State<HomePage> {
             textAlign: TextAlign.center,
           ),
           BottomNavyBarItem(
-            icon: Icon(Icons.settings),
+            icon: Icon(Icons.phone),
             title: Text('Settings'),
             activeColor: Colors.blue,
             textAlign: TextAlign.center,
@@ -220,8 +221,192 @@ class Screen1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    throw Scaffold(
-      
+    return Scaffold(
+      body:  SafeArea(
+                child: SingleChildScrollView(
+
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+
+                        Container(
+                          width: MediaQuery.of(context).size.width,
+                          height: MediaQuery.of(context).size.height-160,
+                          child: Caroselslider(),
+                        ),
+        Container(
+        width: 400,
+        height: 400,
+        decoration: BoxDecoration(
+          color: Colors.green[50],
+          border: Border.all(width: 0),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(40.0),
+          child: Card(
+              elevation: 5,
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Column(children: [
+                Image.asset('assets/car1.jpg',width: 360, height: 290,),
+                Text(
+                  'Here is the text',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold),
+                ),
+               
+              ])),
+    ),
+    ),
+            Container(
+        width: 400,
+        height: 400,
+        decoration: BoxDecoration(
+          color: Colors.green[50],
+          border: Border.all(width: 0),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(40.0),
+          child: Card(
+              elevation: 5,
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Column(children: [
+                Image.asset('assets/car1.jpg',width: 360, height: 280,),
+                Text(
+                  'Here is the text',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold),
+                ),
+               
+              ])),
+    ),
+    ),
+            Container(
+        width: 400,
+        height: 400,
+        decoration: BoxDecoration(
+          color: Colors.green[50],
+          border: Border.all(width: 0),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(40.0),
+          child: Card(
+              elevation: 5,
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Column(children: [
+                Image.asset('assets/car1.jpg',width: 360, height: 280,),
+                Text(
+                  'Here is the text',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold),
+                ),
+               
+              ])),
+    ),
+    ),
+            Container(
+        width: 400,
+        height: 400,
+        decoration: BoxDecoration(
+          color: Colors.green[50],
+          border: Border.all(width: 0),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(40.0),
+          child: Card(
+              elevation: 5,
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Column(children: [
+                Image.asset('assets/car1.jpg',width: 360, height: 280,),
+                Text(
+                  'Here is the text',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold),
+                ),
+               
+              ])),
+    ),
+    ),
+            Container(
+        width: 400,
+        height: 400,
+        decoration: BoxDecoration(
+          color: Colors.green[50],
+          border: Border.all(width: 0),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(40.0),
+          child: Card(
+              elevation: 5,
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Column(children: [
+                Image.asset('assets/car1.jpg',width: 360, height: 280,),
+                Text(
+                  'Here is the text',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold),
+                ),
+               
+              ])),
+    ),
+    ),
+            Container(
+        width: 400,
+        height: 400,
+        decoration: BoxDecoration(
+          color: Colors.green[50],
+          border: Border.all(width: 0),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(40.0),
+          child: Card(
+              elevation: 5,
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Column(children: [
+                Image.asset('assets/car1.jpg',width: 360, height: 280,),
+                Text(
+                  'Here is the text',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold),
+                ),
+               
+              ])),
+    ),
+    ), 
+    ]),
+    ),
+  ),
     );
+
+    
   }
 }
